@@ -1,5 +1,5 @@
 import chai from 'chai'
-import { weekday, snippet } from './functions'
+import { weekday, snippet, numProps } from './functions'
 const expect = chai.expect
 
 describe('weekday', () => {
@@ -46,6 +46,32 @@ describe('snippet', () => {
 
   it('it retruns false if the input is unexpected/invalid', () => {
     expect(snippet([])).to.be.false
+  })
+
+})
+
+
+describe('numProps', () => {
+
+  it('should be a function', () => {
+    expect(numProps).to.be.a('function')
+  })
+
+  it('returns the number of properties an object has', () => {
+    let friend = {
+      name: 'Dominique',
+      age: 30,
+      phone: '555-555-5555'
+    }
+    expect(numProps(friend)).to.deep.equal(3)
+  })
+
+  it('returns the number of properties an object has', () => {
+    expect(numProps({})).to.deep.equal(0)
+  })
+
+  it('it retruns undefined if the input is unexpected/invalid', () => {
+    expect(numProps("yaseen")).to.be.undefined
   })
 
 })

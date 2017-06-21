@@ -25,6 +25,16 @@ const snippet = (string, maxlength) => {
 }
 
 
+const numProps = (obj) => {
+  let result
+
+  if ( typeof obj === 'object') {
+    result = Object.keys(obj).length
+    return result
+  }
+}
 
 
-export { weekday, snippet }
+
+
+export { weekday, snippet, numProps }

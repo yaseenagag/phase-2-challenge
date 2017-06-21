@@ -1,5 +1,5 @@
 import chai from 'chai'
-import { weekday, snippet, numProps } from './functions'
+import { weekday, snippet, numProps, filterBetween } from './functions'
 const expect = chai.expect
 
 describe('weekday', () => {
@@ -23,7 +23,6 @@ describe('weekday', () => {
   it('it retruns false if the input is unexpected/invalid', () => {
     expect(weekday("A")).to.be.undefined
   })
-
 })
 
 describe('snippet', () => {
@@ -47,7 +46,6 @@ describe('snippet', () => {
   it('it retruns false if the input is unexpected/invalid', () => {
     expect(snippet([])).to.be.false
   })
-
 })
 
 
@@ -73,5 +71,25 @@ describe('numProps', () => {
   it('it retruns undefined if the input is unexpected/invalid', () => {
     expect(numProps("yaseen")).to.be.undefined
   })
+})
 
+describe('filterBetween', () => {
+
+  it('should be a function', () => {
+    expect(filterBetween).to.be.a('function')
+  })
+
+  it('returns a new array containing only the elements that are greater than or equal to min and less than or equal to max', () => {
+    let array = [1, 2, 3, 4, 5, 6, 7]
+    expect(filterBetween(array, 3, 6)).to.deep.equal([3, 4, 5, 6])
+  })
+
+  it('returns a new array containing only the elements that are greater than or equal to min and less than or equal to max', () => {
+    let array = [1, 2, 3, 5, 10]
+    expect(filterBetween(array, 2, 5)).to.deep.equal([2, 3, 5])
+  })
+
+  it('retruns undefined if the input is unexpected/invalid', () => {
+    expect(filterBetween({})).to.be.undefined
+  })
 })

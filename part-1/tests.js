@@ -59,11 +59,16 @@ describe('filterBetween', () => {
 
   it('returns a new array containing only the elements that are greater than or equal to min and less than or equal to max', () => {
     let array = [1, 2, 3, 4, 5, 6, 7]
-    expect(filterBetween(array, 3, 6, 4)).to.deep.equal([3, 4, 5, 6])
+    expect(filterBetween(array, 3, 6)).to.deep.equal([3, 4, 5, 6])
+  })
+
+  it('returns a new array containing only the elements that are greater than or equal to min and less than or equal to max', () => {
+    let array = [1, 2, 4, 5, 6, 7]
+    expect(filterBetween(array, 2, 6)).to.deep.equal([2, 4, 5, 6])
   })
 
   it('it retruns false if the input is unexpected/invalid', () => {
-    expect(filterBetween({})).to.be.false
+    expect(filterBetween({})).to.be.undefined
   })
 
 })

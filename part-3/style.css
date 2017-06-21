@@ -1,0 +1,37 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  border: 3px solid black;
+}
+
+sec {
+  height: 494px;
+  width: auto;
+  position: absolute;
+  border: 3px solid black;
+  padding-right: 3px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  border: 3px solid black;
+  padding-right: 3px;
+  padding-left: 3px;
+}
+
+.list {
+  margin-left: 200px;
+}
+
+
+
+.list li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-left: 150px;
+}

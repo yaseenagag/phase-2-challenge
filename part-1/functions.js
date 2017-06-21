@@ -35,6 +35,18 @@ const numProps = (obj) => {
 }
 
 
+const filterBetween = (array, min, max) => {
+  let result
+
+  if (Array.isArray(array)) {
+    for (var i = min - 1 ; i < array.length; i++) {
+      if ( array[i] >= min && array[i] <= max  ) {
+        result.push[array[i]]
+      }
+    }
+    return result
+  }
+}
 
 
-export { weekday, snippet, numProps }
+export { weekday, snippet, numProps, filterBetween }

@@ -8,4 +8,4 @@ for(i = 0; i < clients.length; i++) {
       "name:", clients[i].rep_name
     )
   }
-};
+}

@@ -11,10 +11,10 @@ hub, mongodb, node, openssl, postgresql, readline, redis, rethinkdb, tree
 ps ax | grep (process)
 
 - In a terminal, what does control-c do?
-new line, kills processes.
 
 - In a terminal, what does control-a do?
 Moves cursor to beginning of the line
+new line, kills processes.
 
 - In a terminal, what does control-e do?
 Moves cursor to end of the line.

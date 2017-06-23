@@ -21,7 +21,7 @@ describe('weekday', () => {
   })
 
   it('it retruns false if the input is unexpected/invalid', () => {
-    expect(weekday("A")).to.be.undefined
+    expect(weekday(new Date(2014, 'May', 15))).to.deep.equal('Invalid')
   })
 
 })
@@ -41,11 +41,37 @@ describe('snippet', () => {
   })
 
   it('it retruns false if the input is unexpected/invalid', () => {
-    expect(snippet({},3)).to.be.false
+    expect(snippet({},3)).to.be.undefined
   })
 
   it('it retruns false if the input is unexpected/invalid', () => {
-    expect(snippet([])).to.be.false
+    expect(snippet([])).to.be.undefined
+  })
+
+})
+
+
+describe('numProps', () => {
+
+  it('should be a function', () => {
+    expect(numProps).to.be.a('function')
+  })
+
+  it('returns the number of properties an object has', () => {
+      let friend = {
+      name: 'Dominique',
+      age: 30,
+      phone: '555-555-5555'
+    }
+    expect(numProps(friend)).to.deep.equal(3)
+  })
+
+  it('returns the number of properties an object has', () => {
+    expect(numProps([])).to.deep.equal(0)
+  })
+
+  it('it retruns false if the input is unexpected/invalid', () => {
+    expect(numProps("")).to.deep.equal(0)
   })
 
 })
@@ -58,8 +84,8 @@ describe('filterBetween', () => {
   })
 
   it('returns a new array containing only the elements that are greater than or equal to min and less than or equal to max', () => {
-    let array = [1, 2, 3, 4, 5, 6, 7]
-    expect(filterBetween(array, 3, 6)).to.deep.equal([3, 4, 5, 6])
+    let array = [1, 2, 3, 4, 5, 6, 7, 99, 100]
+    expect(filterBetween(array, 50, 100)).to.deep.equal([99, 100])
   })
 
   it('returns a new array containing only the elements that are greater than or equal to min and less than or equal to max', () => {
@@ -68,7 +94,7 @@ describe('filterBetween', () => {
   })
 
   it('it retruns false if the input is unexpected/invalid', () => {
-    expect(filterBetween({})).to.be.undefined
+    expect(filterBetween()).to.be.undefined 
   })
 
 })
